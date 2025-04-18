@@ -1,0 +1,2 @@
+# aifund
+Trading analytics platform 
