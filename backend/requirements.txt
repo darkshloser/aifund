@@ -1,0 +1,23 @@
+Django==5.0.3            # Django framework
+djangorestframework==3.14.0  # Django REST Framework (for APIs)
+psycopg2-binary==2.9.9   # PostgreSQL adapter (or use `mysqlclient` for MySQL)
+python-dotenv==1.0.0     # Environment variables
+
+# Kafka integration 
+confluent-kafka==2.2.0
+
+# Data Analysis
+pandas==2.0.3            # Data manipulation
+numpy==1.24.4            # Numerical computing
+yfinance==0.2.31         # Yahoo Finance API (for stock data)
+requests==2.31.0         # HTTP requests (for external APIs)
+
+# Async
+celery==5.3.4            # Async task queue
+redis==4.6.0             # Redis broker for Celery
+
+# Development and testing
+pytest==7.4.0            # Testing framework
+pytest-django==4.5.2     # Django pytest plugin
+
+
