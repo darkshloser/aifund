@@ -1,7 +1,23 @@
 version: "3.8"
 services:
-    frontend:
-        build: ./frontend
+    frontend-dev:
+        build:
+            context: ./frontend
+            target: dev
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./frontend:/app
+            - /app/node_modules
+        # depends_on:
+        #   - backend
+        environment:
+            NEXT_PUBLIC_API_URL: http://backend:8000
+
+    frontend-prod:
+        build:
+            context: ./frontend
+            target: prod
         ports:
             - "3000:3000"
         # depends_on:
