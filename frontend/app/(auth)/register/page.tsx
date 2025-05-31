@@ -6,20 +6,26 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { SiteHeader } from "@/components/layout/site-header";
 
-export default function LoginPage() {
+export default function RegisterPage() {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
     const router = useRouter();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (email === "test@test.com" && password === "123456!!") {
-            localStorage.setItem("isLoggedIn", "true");
-            router.push("/dashboard");
-        } else {
-            setError("Invalid credentials");
+        setError("");
+
+        if (password !== confirmPassword) {
+            setError("Passwords do not match");
+            return;
         }
+
+        console.log("Registering user:", { name, email, password });
+        localStorage.setItem("isLoggedIn", "true");
+        router.push("/dashboard");
     };
 
     return (
@@ -32,11 +38,23 @@ export default function LoginPage() {
                             <div className="card card-dark">
                                 <div className="card-header">
                                     <h5 className="card-title mb-0 text-white text-center">
-                                        Login to AIfund
+                                        Create your AIfund account
                                     </h5>
                                 </div>
                                 <div className="card-body">
                                     <form onSubmit={handleSubmit}>
+                                        <div className="mb-3">
+                                            <input
+                                                type="text"
+                                                className="form-control form-control-dark"
+                                                placeholder="Full Name"
+                                                value={name}
+                                                onChange={(e) =>
+                                                    setName(e.target.value)
+                                                }
+                                                required
+                                            />
+                                        </div>
                                         <div className="mb-3">
                                             <input
                                                 type="email"
@@ -61,6 +79,20 @@ export default function LoginPage() {
                                                 required
                                             />
                                         </div>
+                                        <div className="mb-3">
+                                            <input
+                                                type="password"
+                                                className="form-control form-control-dark"
+                                                placeholder="Confirm Password"
+                                                value={confirmPassword}
+                                                onChange={(e) =>
+                                                    setConfirmPassword(
+                                                        e.target.value
+                                                    )
+                                                }
+                                                required
+                                            />
+                                        </div>
                                         {error && (
                                             <div className="alert alert-danger">
                                                 {error}
@@ -70,7 +102,7 @@ export default function LoginPage() {
                                             type="submit"
                                             className="btn btn-custom-blue w-100"
                                         >
-                                            Login
+                                            Create Account
                                         </button>
                                     </form>
                                 </div>
