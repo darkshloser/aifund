@@ -1,4 +1,4 @@
-import { SiteHeader } from "@/components/site-header";
+import { SiteHeader } from "@/components/layout/site-header";
 import { FiArrowRight, FiBarChart2, FiCpu, FiTrendingUp } from "react-icons/fi";
 import Link from "next/link";
 
