@@ -21,7 +21,7 @@ export function DashboardPageLayout({
     };
 
     useEffect(() => {
-        import("../lib/bootstrap-client"); // adjust path based on location
+        import("../../lib/bootstrap-client"); // adjust path based on location
     }, []);
 
     return (

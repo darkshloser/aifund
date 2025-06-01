@@ -17,19 +17,19 @@ function TradingViewWidget({ symbol }: TradingViewWidgetProps) {
             script.async = true;
             script.innerHTML = `
         {
-          "width": "100%",
-          "height": "610",
-          "symbol": "${symbol}",
-          "timezone": "Etc/UTC",
-          "theme": "dark",
-          "style": "1",
-          "locale": "en",
-          "hide_top_toolbar": true,
-          "hide_legend": true,
-          "range": "YTD",
-          "allow_symbol_change": true,
-          "calendar": false,
-          "support_host": "https://www.tradingview.com"
+            "width": "100%",
+            "height": "610",
+            "symbol": "${symbol}",
+            "timezone": "Etc/UTC",
+            "theme": "dark",
+            "style": "1",
+            "locale": "en",
+            "hide_top_toolbar": true,
+            "hide_legend": true,
+            "range": "YTD",
+            "allow_symbol_change": true,
+            "calendar": false,
+            "support_host": "https://www.tradingview.com"
         }`;
             container.current.appendChild(script);
         }

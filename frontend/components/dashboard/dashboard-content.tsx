@@ -41,10 +41,7 @@ export function DashboardContent() {
 
     return (
         <div className="d-flex min-vh-100 bg-custom-dark text-white">
-            <div
-                style={{ width: "320px", background: "blue" }}
-                className="d-flex flex-column"
-            >
+            <div style={{ width: "320px" }} className="d-flex flex-column">
                 <StockSidebar
                     onAssetSelect={setSelectedAsset}
                     selectedAsset={selectedAsset}
@@ -53,10 +50,7 @@ export function DashboardContent() {
                 />
                 {/* <StockInfo selectedAsset={selectedAsset} /> */}
             </div>
-            <div
-                className="flex-grow-1"
-                style={{ overflowY: "auto", background: "yellow" }}
-            >
+            <div className="flex-grow-1" style={{ overflowY: "auto" }}>
                 <main className="p-4">
                     <div className="mb-4">
                         <div className="card card-dark">
