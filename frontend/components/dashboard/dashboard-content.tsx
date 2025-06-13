@@ -4,8 +4,8 @@ import { useState } from "react";
 import { MainChart } from "./main-chart";
 import { StockSidebar } from "./stock-sidebar";
 import type { Asset } from "@/types/assets";
-// import { StockInfo } from "./stock-info";
-// import { MonitoredAssets } from "./monitored-assets";
+import { StockInfo } from "./stock-info";
+import { MonitoredAssets } from "./monitored-assets";
 // import { AssetDetails } from "./asset-details";
 
 export function DashboardContent() {
@@ -48,7 +48,7 @@ export function DashboardContent() {
                     monitoredAssets={monitoredAssets}
                     onMonitorAsset={handleMonitorAsset}
                 />
-                {/* <StockInfo selectedAsset={selectedAsset} /> */}
+                <StockInfo selectedAsset={selectedAsset} />
             </div>
             <div className="flex-grow-1" style={{ overflowY: "auto" }}>
                 <main className="p-4">
@@ -58,12 +58,12 @@ export function DashboardContent() {
                         </div>
                     </div>
                     <div className="mb-4">
-                        {/* <MonitoredAssets
+                        <MonitoredAssets
                             assets={monitoredAssets}
                             onRemoveAsset={handleRemoveMonitoredAsset}
                             onSelectAsset={handleSelectMonitoredAsset}
                             selectedAsset={selectedMonitoredAsset}
-                        /> */}
+                        />
                     </div>
                 </main>
             </div>
